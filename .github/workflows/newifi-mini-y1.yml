@@ -1,8 +1,16 @@
-name: Newifi Mini Y1
+name: OpenWRT LEDE
 
 on:
   workflow_dispatch:
-
+    inputs:
+      router:
+        required: true
+        default: newifi-mini-y1
+        type: choice
+        options:
+        - newifi-mini-y1
+        - phicomm-k2
+        - phicomm-k2p
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -30,7 +38,7 @@ jobs:
         run: |
           cd lede
           ls ../
-          cp ../newifi-mini-y1-config ./.config
+          cp ../${{ github.event.inputs.router }}-config ./.config
           make defconfig
 
       - name: Download DL
