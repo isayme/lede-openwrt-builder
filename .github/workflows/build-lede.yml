@@ -54,5 +54,5 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@main
         with:
-          name: OpenWrt_Firmware_Newifi_Mini_Y1
+          name: OpenWrt_Firmware_${{ github.event.inputs.router }}
           path: ./lede/bin/targets/
