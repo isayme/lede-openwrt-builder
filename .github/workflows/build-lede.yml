@@ -11,6 +11,7 @@ on:
         - newifi-mini-y1
         - phicomm-k2
         - phicomm-k2p
+        - jdcloud-re-sp-01b
 jobs:
   build:
     runs-on: ubuntu-latest
